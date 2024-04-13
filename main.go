@@ -1,25 +1,19 @@
 package main
 
 import (
-	"log"
 	"net/http"
-	"time"
 
 	"github.com/labstack/echo/v4"
 )
 
-func timeTrack(start time.Time, name string) {
-	elapsed := time.Since(start)
-	log.Printf("%s took %s", name, elapsed)
-}
-
 func main() {
 	e := echo.New()
+
+	// Endpoint para saludar
 	e.GET("/", func(c echo.Context) error {
-		defer timeTrack(time.Now(), "Root endpoint")
-		//time.Sleep(time.Second * 2)
-		return c.String(http.StatusOK, "Hello, World from Oscars PC using Air!")
+		return c.String(http.StatusOK, "¡Hola, mundo! Esta es mi API (que no hace nada) para probar Travis CI")
 	})
 
-	e.Logger.Fatal(e.Start(":8086"))
+	// Iniciar el servidor
+	e.Logger.Fatal(e.Start(":8080"))
 }

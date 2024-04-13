@@ -1,0 +1,13 @@
+language: go
+
+go:
+  - "1.21"
+
+# Instalar dependencias antes de ejecutar las pruebas
+before_script:
+  - go get -u github.com/labstack/echo/v4
+  - go get -u github.com/stretchr/testify/assert
+
+# Ejecutar las pruebas
+script:
+  - go test -v ./...
