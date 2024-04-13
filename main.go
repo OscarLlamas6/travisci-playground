@@ -11,7 +11,7 @@ func main() {
 
 	// Endpoint para saludar
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "¡Hola, mundo! Esta es mi API (que no hace nada) para probar Travis CI :D")
+		return c.String(http.StatusOK, "¡Hola, mundo! Esta es mi API (que no hace nada) para probar Travis CI :D!")
 	})
 
 	// Iniciar el servidor
